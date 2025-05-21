@@ -12,6 +12,8 @@ run <- function() {}
 output <- function(outputfile) {
  pdf(outputfile)
 ElbowPlot(pbmc)
+#print(str(pbmc))
+write.csv(pbmc@commands$RunPCA.RNA@params$features, paste(outputfile, "csv", sep="."))
 }
 
 
